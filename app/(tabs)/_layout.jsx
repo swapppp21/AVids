@@ -41,6 +41,7 @@ const TabLayout = () => {
           },
         }}
       >
+      
         <Tabs.Screen
           name="home"
           options={{
@@ -56,6 +57,7 @@ const TabLayout = () => {
             ),
           }}
         />
+        
         <Tabs.Screen
           name="bookmark"
           options={{

@@ -15,40 +15,45 @@ const SignIn=()=>{
       email:'',
       password:''
     })
-
+    
     const[isSubmitting, setSubmitting]= useState(false)
+    
+    const submit=()=>{
 
-
-
-
-    const submit=async()=>{
-      if (!form.email || !form.password){
-        Alert.alert('Error','Please fill in all the fields')
-      }
-      setSubmitting(true);
-      try {
-        await signIn(form.email, form.password)
-        const result= await getCurrentUser();
-        // setUser(result);
-        // setIsLogged(true);
-        // Alert.alert("Sucess", "User signed in successfully");
-
-
-        router.replace("/home")
-
-      } catch (error) {
-        Alert.alert('Error',error.message)
-      }finally{
-        setSubmitting(false)
-      }
-      
     }
+
+
+
+
+
+    // const submit=async()=>{
+    //   if (!form.email || !form.password){
+    //     Alert.alert('Error','Please fill in all the fields')
+    //   }
+    //   setSubmitting(true);
+    //   try {
+    //     await signIn(form.email, form.password)
+    //     const result= await getCurrentUser();
+    //     // setUser(result);
+    //     // setIsLogged(true);
+    //     // Alert.alert("Sucess", "User signed in successfully");
+
+
+    //     router.replace("/home")
+
+    //   } catch (error) {
+    //     Alert.alert('Error',error.message)
+    //   }finally{
+    //     setSubmitting(false)
+    //   }
+      
+    // }
     return (
       <SafeAreaView className="bg-primary h-full">
         <ScrollView>
             <View className="w-full justify-center h-full px-4 my-6">
-                <Image source={images.logo}
-                resizeMode='contain' className="w-[115px] h-[35px]"
+                <Image source={images.Logo}
+                resizeMode='contain' className="w-[215px] h-[65px]"
                 />
                 <Text className="text-2xl text-white text-semibold mt-10 font-psemibold">
                     Log in to AVids

@@ -6,9 +6,8 @@ import { images } from '@/constants'
 import FormField from '../components/FormField'
 import CustomButton from '../components/CustomButton'
 import { Link } from 'expo-router'
-import {createUser} from '../lib/appwrite'
+//import {createUser} from '../lib/appwrite'
 import { router } from 'expo-router'
-
 const SignUp=()=>{
 
     const[form,setForm]= useState({
@@ -18,34 +17,25 @@ const SignUp=()=>{
     })
 
     const[isSubmitting, setSubmitting]= useState(false)
-
-
-    const submit=async()=>{
-      if (!form.username || !form.email || !form.password){
-        Alert.alert('Error','Please fill in all the fields')
-      }
+    const submit = async () => {
       setSubmitting(true);
       try {
-        const result = await createUser(form.email, form.password, form.username);
-        // setUser(result);
-        // setIsLogged(true);
-        
         router.replace("/home")
-
+       
       } catch (error) {
-        Alert.alert('Error',error.message)
-      }finally{
-        setSubmitting(false)
+        // Handle submission errors here
+        console.error('Submission error:', error);
+      } finally {
+        setSubmitting(false);
       }
-      
-    }
-
+    };
+  
     return (
       <SafeAreaView className="bg-primary h-full">
         <ScrollView>
             <View className="w-full justify-center h-full px-4 my-6">
-                <Image source={images.logo}
-                resizeMode='contain' className="w-[115px] h-[35px]"
+                <Image source={images.Logo}
+                resizeMode='contain' className="w-[215px] h-[65px]"
                 />
                 <Text className="text-2xl text-white text-semibold mt-10 font-psemibold">
                     Sign Up to AVids
@@ -92,3 +82,42 @@ const SignUp=()=>{
 
 
 export default SignUp
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  // const submit=()=>{
+      
+    // }
+    // const submit=async()=>{
+    //   if (!form.username || !form.email || !form.password){
+    //     Alert.alert('Error','Please fill in all the fields')
+    //   }
+    //   setSubmitting(true);
+    //   try {
+    //     const result = await createUser(form.email, form.password, form.username);
+    //     // setUser(result);
+    //     // setIsLogged(true);
+        
+    //     router.replace("/home")
+
+    //   } catch (error) {
+    //     Alert.alert('Error',error.message)
+    //   }finally{
+    //     setSubmitting(false)
+    //   }
+      
+    // }
