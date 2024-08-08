@@ -1,4 +1,4 @@
-import { Account, Avatars, Client, ID,Databases } from 'react-native-appwrite';
+import { Account, Avatars, Client, ID,Databases, Query} from 'react-native-appwrite';
 export const config={
     endpoint: 'https://cloud.appwrite.io/v1',
     platform:'com.jsm.AVids',
@@ -54,9 +54,9 @@ export const createUser= async (email, password, username) => {
     }
 
 }
-export async function signIn(email, password){
+export const signIn=async(email, password)=>{
     try {
-        const session=await account.createEmailSession(email, password)
+        const session=await account.createEmailPasswordSession(email, password)
 
         return session;
     } catch (error) {
@@ -64,3 +64,57 @@ export async function signIn(email, password){
         
     }
 }
+// Get Account
+export async function getAccount() {
+    try {
+      const currentAccount = await account.get();
+  
+      return currentAccount;
+    } catch (error) {
+      throw new Error(error);
+    }
+  }
+
+
+export const getCurrentUser=async ()=>{
+    try {
+        const currentAccount=await getAccount();
+        if(!currentAccount) throw Error;
+
+        const currentUser= await databases.listDocuments(
+            config.databaseId,
+            config.userCollectionId,
+            [Query.equal('accountId', currentAccount.$id)]
+        )
+        if(!currentUser) throw Error;
+        return currentUser.documents[0];
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+}
+
+
+
+
+
+
+
+
+// export async function signIn(email, password) {
+//     try {
+//         const sessions = await account.getSessions();
+
+//         if (sessions.total > 0) {
+//             for (let session of sessions.sessions) {
+//                 await account.deleteSession(session.$id);
+//             }
+//         }
+
+//         const session = await account.createEmailPasswordSession(email, password);
+//         return session;
+//     } catch (error) {
+//         console.log(error);
+//         throw new Error(error.message);
+//     }
+// }
