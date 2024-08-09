@@ -7,27 +7,6 @@ import Trending from '../components/Trending'
 import EmptyState from '../components/EmptyState'
 import VideoCard from '../components/VideoCard'
 
-const videoData = [
-  {
-    id: '1',
-    title: 'Sample Video 1',
-    thumbnail: 'https://example.com/video1.jpg',
-  },
-  {
-    id: '2',
-    title: 'Sample Video 2',
-    thumbnail: 'https://example.com/video2.jpg',
-  },
-  {
-    id: '3',
-    title: 'Sample Video 3',
-    thumbnail: 'https://example.com/video3.jpg',
-  },
-];
-
-
-
-
 const Home =()=>{
     const[refreshing, setRefreshing]= useState(false)
     const onRefresh=async ()=>{
@@ -75,7 +54,7 @@ const Home =()=>{
                    <Text className="text-gray-100 text-lg font-pregular mb-3">
                   Latest Videos
                    </Text>
-                   <Trending posts={[{id:1},{id:2},{id:3}]?? [] }/>
+                   <Trending posts={videoData2}/>
                  </View>
                
              </View>
@@ -95,6 +74,55 @@ const Home =()=>{
 }
 
 export default Home
+const videoData = [
+  {
+    id: '1',
+    title: 'Sample Video 1',
+    thumbnail: 'https://example.com/video1.jpg',
+  },
+  {
+    id: '2',
+    title: 'Sample Video 2',
+    thumbnail: 'https://example.com/video2.jpg',
+  },
+  {
+    id: '4',
+    title: 'Sample Video 4',
+    thumbnail: 'https://example.com/video3.jpg',
+  },
+  {
+    id: '3',
+    title: 'Sample Video 3',
+    thumbnail: 'https://example.com/video3.jpg',
+  },
+];
+const videoData2 = [
+  {
+    id: '1',
+    title: 'Sample Video 1',
+    thumbnail: 'https://example.com/video1.jpg',
+  },
+  {
+    id: '2',
+    title: 'Sample Video 2',
+    thumbnail: 'https://example.com/video2.jpg',
+  },
+  {
+    id: '3',
+    title: 'Sample Video 3',
+    thumbnail: 'https://example.com/video3.jpg',
+  },
+  {
+    id: '4',
+    title: 'Sample Video 4',
+    thumbnail: 'https://example.com/video3.jpg',
+  },
+  {
+    id: '5',
+    title: 'Sample Video 5',
+    thumbnail: 'https://example.com/video3.jpg',
+  },
+];
 
 
 

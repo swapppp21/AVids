@@ -37,7 +37,7 @@ const TabLayout = () => {
             backgroundColor: "#161622",
             borderTopWidth: 1,
             borderTopColor: "#232533",
-            height: 84,
+            height: 64,
           },
         }}
       >
@@ -73,7 +73,6 @@ const TabLayout = () => {
             ),
           }}
         />
-
         <Tabs.Screen
           name="create"
           options={{
@@ -89,6 +88,7 @@ const TabLayout = () => {
             ),
           }}
         />
+       
         <Tabs.Screen
           name="profile"
           options={{
@@ -110,3 +110,5 @@ const TabLayout = () => {
 };
 
 export default TabLayout;
+
+
