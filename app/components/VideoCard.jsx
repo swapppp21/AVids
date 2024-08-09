@@ -4,7 +4,7 @@ import { View, Text, Image, StyleSheet } from 'react-native';
 const VideoCard = ({ id, title, thumbnail }) => {
   return (
     <View style={styles.cardContainer}>
-      <Image source={{ uri: thumbnail }} style={styles.thumbnail} />
+      <Image source={thumbnail} style={styles.thumbnail} />
       <Text style={styles.title}>{title}</Text>
     </View>
   );
@@ -12,10 +12,11 @@ const VideoCard = ({ id, title, thumbnail }) => {
 
 const styles = StyleSheet.create({
   cardContainer: {
-    margin: 10,
-    backgroundColor: '#fff',
-    borderRadius: 8,
+    margin: 15,
+    backgroundColor: '#161622',
+    borderRadius: 9,
     overflow: 'hidden',
+  
   },
   thumbnail: {
     width: '100%',

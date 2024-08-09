@@ -1,11 +1,12 @@
 import React, { useState } from 'react'
 import { FlatList ,Image,RefreshControl,Text,View} from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
-import { images } from '@/constants'
 import SearchInput from '../components/SearchInput'
 import Trending from '../components/Trending'
 import EmptyState from '../components/EmptyState'
 import VideoCard from '../components/VideoCard'
+import {images} from '@/constants'
+
 
 const Home =()=>{
     const[refreshing, setRefreshing]= useState(false)
@@ -77,58 +78,52 @@ export default Home
 const videoData = [
   {
     id: '1',
-    title: 'Sample Video 1',
-    thumbnail: 'https://example.com/video1.jpg',
+    title: 'Watch Rick and Morty',
+    thumbnail: require('../../assets/Pop/haha1.jpg'),
   },
   {
     id: '2',
-    title: 'Sample Video 2',
-    thumbnail: 'https://example.com/video2.jpg',
-  },
-  {
-    id: '4',
-    title: 'Sample Video 4',
-    thumbnail: 'https://example.com/video3.jpg',
+    title: 'Children should be scared',
+    thumbnail:require('../../assets/Pop/haha2.jpg'),
   },
   {
     id: '3',
-    title: 'Sample Video 3',
-    thumbnail: 'https://example.com/video3.jpg',
+    title: 'King Kohli passes Sachin',
+    thumbnail: require('../../assets/Pop/haha3.jpg'),
+  },
+  {
+    id: '4',
+    title: 'Demon Slayer s4',
+    thumbnail: require('../../assets/Pop/haha4.jpg'),
   },
 ];
 const videoData2 = [
   {
     id: '1',
     title: 'Sample Video 1',
-    thumbnail: 'https://example.com/video1.jpg',
+    thumbnail: require('../../assets/Pop/hehe1.jpg'),
   },
   {
     id: '2',
     title: 'Sample Video 2',
-    thumbnail: 'https://example.com/video2.jpg',
+    thumbnail:  require('../../assets/Pop/hehe2.jpg'),
   },
   {
     id: '3',
     title: 'Sample Video 3',
-    thumbnail: 'https://example.com/video3.jpg',
+    thumbnail:  require('../../assets/Pop/hehe3.jpg'),
   },
   {
     id: '4',
     title: 'Sample Video 4',
-    thumbnail: 'https://example.com/video3.jpg',
+    thumbnail:  require('../../assets/Pop/hehe4.jpg'),
   },
   {
     id: '5',
     title: 'Sample Video 5',
-    thumbnail: 'https://example.com/video3.jpg',
+    thumbnail:  require('../../assets/Pop/hehe5.jpg'),
   },
 ];
 
 
 
-// <View className="w-full flex-1 pt-5 pb-8">
-// <Text className="text-gray-100 text-lg font-pregular mb-3">
-//   Latest Videos
-// </Text>
-// <Trending posts={[{id:1},{id:2},{id:3}]?? [] }/>
-// </View>

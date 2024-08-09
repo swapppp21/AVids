@@ -10,6 +10,11 @@ import {
 import { icons } from "@/constants";
 import CustomButton from "../components/CustomButton";
 import FormField from "../components/FormField";
+import * as DocumentPicker from 'expo-document-picker'
+
+
+
+
 const Create = () => {
   const [form, setForm] = useState({
     title: "",
@@ -17,6 +22,19 @@ const Create = () => {
     thumbnail: null,
     prompt: "",
   });
+
+  const openPicker = async (selectType) => {
+    const result = await DocumentPicker.getDocumentAsync({
+      type:
+        selectType === "image"
+          ? ["image/png", "image/jpg"]
+          : ["video/mp4", "video/gif"],
+    });
+
+} 
+
+
+
 
   return (
     <SafeAreaView className="bg-primary h-full">
@@ -36,7 +54,7 @@ const Create = () => {
             Upload Video
           </Text>
 
-          <TouchableOpacity >
+          <TouchableOpacity onPress={() => openPicker("video")}>
             {form.video ? (
               <Video
                 
@@ -61,10 +79,10 @@ const Create = () => {
             Thumbnail Image
           </Text>
 
-          <TouchableOpacity >
+          <TouchableOpacity  onPress={() => openPicker("image")}>
             {form.thumbnail ? (
               <Image
-                source={"dueu"}
+                source={""}
                 resizeMode="cover"
                 className="w-full h-64 rounded-2xl"
               />

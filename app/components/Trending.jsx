@@ -1,6 +1,6 @@
 import React from 'react';
 import { FlatList, StyleSheet } from 'react-native';
-import VideoCard from '../components/VideoCard'; // Ensure this path is correct for your project
+import VideoCard from '../components/VideoCard'; 
 
 const Trending = ({ posts }) => {
   return (
@@ -23,7 +23,7 @@ const Trending = ({ posts }) => {
 
 const styles = StyleSheet.create({
   listContainer: {
-    paddingLeft: 10,
+    paddingLeft: 5,
   },
 });
 
