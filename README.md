@@ -48,3 +48,21 @@ Join our community of developers creating universal apps.
 
 - [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
 - [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+
+
+# AVids
+
+## Description
+Developed a React Native application for streaming and uploading trending video content. 
+Implemented advanced user authentication flows using React Navigation and custom hooks. Designed and developed responsive UI 
+components (CustomButton, FormField) leveraging React Native's TouchableOpacity, TextInput, and 
+flexbox layout system
+ Integrated media upload capabilities with file handling and state management via useState and useEffect. 
+Enhanced app performance with optimized flat lists and conditional rendering for video feeds.
+ Managed routing and screen transitions using StackNavigator and TabNavigator.
+ Applied asynchronous operations with Promises and async/await for seamless API interactions.
+---
+
+### App Demo
+
+[Watch Demo Video](https://drive.google.com/file/d/1b3PEz9128SwTWjrPvXC0_dAFuFh6iciK/view?usp=sharing)
